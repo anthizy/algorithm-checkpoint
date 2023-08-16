@@ -1,0 +1,35 @@
+ALGORITHM sentenceRead
+VAR 
+  //declare variables
+  Use three variables as counters.: INTEGER;
+  vowels: ARRAY_OF type[5];
+  sentence, word: STRING;
+BEGIN
+  //initialize variables
+  charCount, wordCount, vowelCount := 0;
+  vowels := ['a', 'e', 'i', 'o', 'u'];
+  sentence := ('i am a web developer.');
+  words := sentence.split(' ');
+
+ //for loop to count number of characters in sentence
+  FOR charCount FROM 0 TO (sentence.length)-1 STEP 1  DO
+    charCount+1;
+
+  //for loop to count number of words
+  FOR wordCount FROM 0 TO (words.length)-1 STEP 1  DO
+    wordCount+1;
+  END_FOR
+
+    //for loop to count number of vowels in sentence
+    FOR vowelCount FROM 0 TO (vowels.length)-1 STEP 1  DO
+      //if statement to compare value and type of element in the sentence string against vowel string
+      IF (sentence === vowels) THEN
+        vowelCount+1;
+      END_IF
+    END_FOR
+  END_FOR
+  
+  //print out answers
+  write("The number of words in the given sentence is: ", wordCount);
+  write("The number of words in the given sentence is: ", charCount);
+  write("The number of words in the given sentence is: ", vowelCount);
